@@ -10,5 +10,15 @@ export default class Weather {
 
     this.city = data.name
     this.kelvin = data.main.temp
+    this.f = data.main.temp * 9 / 5 - 459.67
+  }
+  get Template() {
+    return `
+    <div class="row">
+    <div class="col-12">${this.city}</div>
+    <div class="col-12">${Math.round(this.f)}</div>
+</div>
+</div>
+    `
   }
 }

@@ -2,7 +2,11 @@ import { ProxyState } from "../AppState.js";
 import todoService from "../Services/TodoService.js";
 
 //TODO Create the draw function
-function _draw() { }
+function _draw() {
+  let template = ''
+  let todos = document.getElementById("todos")
+  ProxyState.todos.forEach(t => template += t.Template)
+}
 
 export default class TodoController {
   constructor() {
