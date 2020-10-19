@@ -1,14 +1,21 @@
 export default class Todo {
   constructor(data) {
-    this.id =
-      this.todo = data.todo
-    this.complete = false
+    this._id = data._id
+    this.description = data.description
+    this.completed = data.completed || false
   }
 
   get Template() {
-    return `
-    <li class="col-8">${this.todo}</li>
-    <div class="col-2" onclick="app.todoController.toggleTodoStatus('${this.id}')">o</div>
-    <div class="col-2"oncclick="app.todoController.removeTodo('${this.id}')>x</div>`
+    let subTemplate = ''
+    subTemplate += `<li class="col-12 `
+    if (this.completed) {
+      subTemplate += `todo-completed`
+    }
+    subTemplate += `">${this.description}
+    <div class=" btn btn-outline-light" onclick="app.todoController.toggleTodoStatus('${this._id}')">o</div>
+    <div class=" btn btn-outline-light"onclick="app.todoController.removeTodo('${this._id}')">x</div>
+    </li>
+    `
+    return subTemplate
   }
 }

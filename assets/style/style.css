@@ -7,6 +7,10 @@
   transition: all ease-in-out .3s;
 }
 
+.todo-completed{
+  text-decoration: line-through;
+}
+
 .hide-away{
   z-index: -1;
   height: 100vh;
@@ -20,6 +24,26 @@
   min-height: 100vh;
   min-width: 100vw;
 }
+
+.quote-author{
+  color: transparent;
+  text-shadow: rgba(32, 32, 34, 0) 1px 1px 5px;
+
+  transition: all ease-in-out .3s;
+}
+
+.quote-author + .quote{
+  color: rgba(223, 223, 223, 0);
+  text-shadow: rgba(32, 32, 34, 0) 1px 1px 5px;
+  transition: all ease-in-out .3s;
+}
+
+.quote-author:hover + .quote{
+  color: rgb(223, 223, 223);
+  text-shadow: rgb(32, 32, 34) 1px 1px 5px;
+}
+
+
 
 .bg-50{
   background-color: rgba(0, 0, 0, .3);
@@ -35,6 +59,8 @@
   border-bottom: 1px rgba(255, 255, 255, .8) solid;
   border-left: 1px rgba(255, 255, 255, .8) solid;
   border-radius: 5px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.445), transparent);
+  backdrop-filter: blur(2px);
 }
 
 body { min-height: 100vh; display: flex; flex-direction: column; }

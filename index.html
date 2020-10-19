@@ -17,11 +17,11 @@
         <div class="container-fluid">
             <div class="row p-4">
                 <div class="col-4 text-light text-shadow todo-border"> your todos
-                    <form onsubmit="app.todosController.create(event)">
+                    <form onsubmit="app.todoController.addTodo(event)">
                         <input name="todo" class=" w-75 rounded border shadow-sm bg-50" type="text">
                         <button class="btn btn-outline-light bg-50">+</button>
                     </form>
-                    <ul class="row">
+                    <ul id="todos" class="row">
                         <li class="col-8">todo 1</li>
                         <div class="col-2">o</div>
                         <div class="col-2">x</div>
@@ -42,6 +42,7 @@
             <div class="row quote-zone h-100 justify-content-center align-items-center">
                 <h1 id="quote" class="col-8 text-center text-shadow mb-5">stuff in the middel</h1>
             </div>
+
         </div>
     </main>
     <footer class="container-fluid bg-transparent">

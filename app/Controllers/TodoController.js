@@ -6,12 +6,14 @@ function _draw() {
   let template = ''
   let todos = document.getElementById("todos")
   ProxyState.todos.forEach(t => template += t.Template)
+  todos.innerHTML = template
 }
 
 export default class TodoController {
   constructor() {
     todoService.getTodos();
     ProxyState.on("todos", _draw)
+    _draw()
   }
 
   getTodos() {
@@ -25,7 +27,9 @@ export default class TodoController {
     e.preventDefault();
     var form = e.target;
     //TODO build the todo object from the data that comes into this method
-    var todo = {};
+    var todo = {
+      description: form.todo.value
+    };
     try {
       todoService.addTodo(todo);
     } catch (error) {
